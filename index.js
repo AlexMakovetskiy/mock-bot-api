@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 
+const apiRoutes = require("./routes/api-routes");
 const botIncomeMassages = require("./helpers/botHelpers");
 
 const app = express();
@@ -87,6 +88,8 @@ bot.on('message', (msg) => {
         }
     }
 });
+
+app.use('', apiRoutes);
 
 app.listen(mainPort, () => {
     console.log(`Сервер запущен на порту: ${mainPort}`);
