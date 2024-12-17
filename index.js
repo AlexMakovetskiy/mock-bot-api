@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const TelegramBot = require('node-telegram-bot-api');
 
 const apiRoutes = require("./routes/api-routes");
@@ -89,8 +90,25 @@ bot.on('message', (msg) => {
     }
 });
 
+
+
+app.use(cors({
+    origin: process.env.CLIENT_ORIGIN,
+    methods: 'GET,OPTIONS',
+    secure: true,
+}));
 app.use('', apiRoutes);
 
-app.listen(mainPort, () => {
-    console.log(`Сервер запущен на порту: ${mainPort}`);
-});
+app.disable('x-powered-by');
+
+const start = async () => {
+    try {
+        app.listen(mainPort, (error) => {
+            error ? console.log(error) : console.log(`Server opened in PORT: ${mainPort}`);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+start();
