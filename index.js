@@ -2,6 +2,7 @@ const express = require('express');
 const TelegramBot = require('node-telegram-bot-api');
 const cors = require("cors");
 
+const apiRoutes = require("./routes/api-routes");
 const botIncomeMassages = require("./helpers/botMassages");
 const nutritionTips = require("./helpers/nutritionTips");
 
