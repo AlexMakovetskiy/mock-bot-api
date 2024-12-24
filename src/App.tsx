@@ -37,7 +37,7 @@ const App = () => {
                 onClick={() => handleButtonClick(0, "interactive-game-bot-23845")}
             >Interactive game</button>
             <button style={{ background: `linear-gradient(to right, ${buttonColors[1] || 'red'}, ${buttonColors[1] || 'blue'})` }} onClick={() => handleButtonClick(1, "mock-bot-api")}>Finance assistant</button>
-            <button style={{ background: `linear-gradient(to right, ${buttonColors[2] || 'red'}, ${buttonColors[2] || 'blue'})` }} onClick={() => handleButtonClick(2, "")}>Кнопка 3</button>
+            <button style={{ background: `linear-gradient(to right, ${buttonColors[2] || 'red'}, ${buttonColors[2] || 'blue'})` }} onClick={() => handleButtonClick(2, "healthy-food-assistant")}>Healthy food assistant</button>
         </div>
         </div>
     );
