@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const TelegramBot = require('node-telegram-bot-api');
 
+const apiRoutes = require("./routes/api-routes");
 const botIncomeMassages = require("./helpers/botHelpers");
 
 const app = express();
@@ -12,9 +14,9 @@ const mockPort = 6060;
 const mainPort = process.env.PORT || mockPort;
 
 let difficultyLevels = {
-    easy: { range: 10, attempts: 4 },
-    medium: { range: 20, attempts: 3 },
-    hard: { range: 30, attempts: 2 }
+    easy: { range: 5, attempts: 4 },
+    medium: { range: 8, attempts: 3 },
+    hard: { range: 12, attempts: 2 }
 };
 
 let rounds = 3;
@@ -88,6 +90,25 @@ bot.on('message', (msg) => {
     }
 });
 
-app.listen(mainPort, () => {
-    console.log(`Сервер запущен на порту: ${mainPort}`);
-});
+
+
+app.use(cors({
+    origin: process.env.CLIENT_ORIGIN,
+    methods: 'GET,OPTIONS',
+    secure: true,
+}));
+app.use('', apiRoutes);
+
+app.disable('x-powered-by');
+
+const start = async () => {
+    try {
+        app.listen(mainPort, (error) => {
+            error ? console.log(error) : console.log(`Server opened in PORT: ${mainPort}`);
+        });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+start();
