@@ -14,9 +14,9 @@ const mockPort = 6060;
 const mainPort = process.env.PORT || mockPort;
 
 let difficultyLevels = {
-    easy: { range: 10, attempts: 4 },
-    medium: { range: 20, attempts: 3 },
-    hard: { range: 30, attempts: 2 }
+    easy: { range: 5, attempts: 4 },
+    medium: { range: 8, attempts: 3 },
+    hard: { range: 12, attempts: 2 }
 };
 
 let rounds = 3;
