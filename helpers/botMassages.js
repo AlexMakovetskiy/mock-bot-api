@@ -1,5 +1,6 @@
 const botIncomeMassages = {
     start: /\/start/,
+    continue: /\/continue/,
     investing: /\/investing/,
     saving: /\/saving/,
     debt_management: /\/debt_management/,

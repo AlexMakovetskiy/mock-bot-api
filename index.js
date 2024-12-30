@@ -21,149 +21,117 @@ bot.onText(botIncomeMassages.start, (msg) => {
     bot.sendMessage(chatId, 'Привет! Я чат-бот по финансовым советам. Выберите категорию советов: /saving, /investing, /debt_management, /retirement_planning, /fin_security, /tax_planning, /fin_insurance, /inheritance_management, /education_of_children, /buying_house, /budgeting, /financial_literacy, /fin_goals, /fin_pillow, /fin_partnering, /fin_instruments, /future_fin_plans, /fin_independency, /tax_strategy, /fin_responsibility');
 });
 
+bot.onText(botIncomeMassages.continue, (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, 'Выберите категорию советов: /saving, /investing, /debt_management, /retirement_planning, /fin_security, /tax_planning, /fin_insurance, /inheritance_management, /education_of_children, /buying_house, /budgeting, /financial_literacy, /fin_goals, /fin_pillow, /fin_partnering, /fin_instruments, /future_fin_plans, /fin_independency, /tax_strategy, /fin_responsibility');
+});
+
 bot.onText(botIncomeMassages.investing, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[1];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[2];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.saving, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[2];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[3];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.debt_management, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[3];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[4];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.retirement_planning, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[4];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[5];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_security, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[5];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[6];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.tax_planning, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[6];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[7];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_insurance, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[7];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[8];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.inheritance_management, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[8];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[9];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.education_of_children, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[9];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[10];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.buying_house, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[10];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[11];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.budgeting, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[11];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[12];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.financial_literacy, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[12];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[13];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_goals, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[13];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[14];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_pillow, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[14];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[15];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_partnering, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[15];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[16];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_instruments, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[16];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[17];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.future_fin_plans, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[17];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[18];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_independency, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[18];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[19];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.tax_strategy, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[19];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[20];
+    sendRandomTip(msg.chat.id);
 });
 
 bot.onText(botIncomeMassages.fin_responsibility, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[20];
-    askQuestion(msg.chat.id);
+    currentCategory = Object.keys(botIncomeMassages)[21];
+    sendRandomTip(msg.chat.id);
 });
 
-function askQuestion(chatId) {
-    switch (currentCategory) {
-        case `${Object.keys(botIncomeMassages)[1]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по инвестированию вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[2]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по сохранению вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[3]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по управлению долгами вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[4]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по планированию пенсии вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[5]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовой безопасности вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[6]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по планированию налогов вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[7]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовому страхованию вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[8]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по управлению наследством вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[9]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по затратам на обучение детей вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[10]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по покупке дома вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[11]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по управлению бюджетом вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[12]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовой грамотности вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[13]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовым целям вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[14]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовой подушке вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[15]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по партнёрству в сфере финансов вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[16]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовым инструментам вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[17]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовым планам на будущее вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[18]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовой независимости вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[19]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по стратегии налогов вас интересуют?'); break;
-        case `${Object.keys(botIncomeMassages)[20]}`:
-            bot.sendMessage(chatId, 'Какие конкретно советы по финансовой ответственности вас интересуют?'); break;
-        default: break;
+function sendRandomTip(chatId) {
+    const tips = financeTips[currentCategory];
+
+    if (tips && tips.length > 0) {
+        const randomIndex = Math.floor(Math.random() * tips.length);
+        bot.sendMessage(chatId, `Совет: ${tips[randomIndex]}. Чтобы продолжить, введите /continue.`);
     }
 }
 
