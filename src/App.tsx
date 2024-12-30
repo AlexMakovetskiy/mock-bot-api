@@ -22,36 +22,44 @@ const App = () => {
                         setButtonColors(newColors);
                     }, 15000);
                 }
-                if(response.status >= 300 && response.status < 400) {
-                    const newColors = [...buttonColors];
-                    newColors[index] = 'orange';
-                    setButtonColors(newColors);
-
-                    setTimeout(() => {
-                        newColors[index] = '';
+                else {
+                    if(response.status >= 300 && response.status < 400) {
+                        const newColors = [...buttonColors];
+                        newColors[index] = 'orange';
                         setButtonColors(newColors);
-                    }, 15000);
-                }
-                if(response.status >= 400 && response.status < 500) {
-                    const newColors = [...buttonColors];
-                    newColors[index] = 'red';
-                    setButtonColors(newColors);
+    
+                        setTimeout(() => {
+                            newColors[index] = '';
+                            setButtonColors(newColors);
+                        }, 15000);
+                    }
+                    else {
+                        if(response.status >= 400 && response.status < 500) {
+                            const newColors = [...buttonColors];
+                            newColors[index] = 'red';
+                            setButtonColors(newColors);
+        
+                            setTimeout(() => {
+                                newColors[index] = '';
+                                setButtonColors(newColors);
+                            }, 15000);
+                        }
+                        else {
+                            if(response.status >= 500 && response.status < 600) {
+                                const newColors = [...buttonColors];
+                                newColors[index] = 'black';
+                                setButtonColors(newColors);
+            
+                                setTimeout(() => {
+                                    newColors[index] = '';
+                                    setButtonColors(newColors);
+                                }, 15000);
+                            }
+                        }
+                    }
 
-                    setTimeout(() => {
-                        newColors[index] = '';
-                        setButtonColors(newColors);
-                    }, 15000);
                 }
-                if(response.status >= 500 && response.status < 600) {
-                    const newColors = [...buttonColors];
-                    newColors[index] = 'black';
-                    setButtonColors(newColors);
 
-                    setTimeout(() => {
-                        newColors[index] = '';
-                        setButtonColors(newColors);
-                    }, 15000);
-                }
             })
             .catch((error) => {
                 console.error(error);
