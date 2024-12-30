@@ -67,7 +67,7 @@ bot.on('message', (msg) => {
             currentRound++;
             bot.sendMessage(chatId, `Раунд ${currentRound}. Угадай число от 1 до ${range}.`);
         } else {
-            bot.sendMessage(chatId, `Игра окончена. Спасибо за участие!`);
+            bot.sendMessage(chatId, `Игра окончена. Спасибо за участие! Для начала новой игры нажмите /start`);
         }
         } else {
             attempts--;
@@ -81,7 +81,7 @@ bot.on('message', (msg) => {
                     currentRound++;
                     bot.sendMessage(chatId, `Раунд ${currentRound}. Угадай число от 1 до ${range}.`);
                 } else {
-                    bot.sendMessage(chatId, `Игра окончена. Спасибо за участие!`);
+                    bot.sendMessage(chatId, `Игра окончена. Спасибо за участие! Для начала новой игры нажмите /start`);
                 }
             } else {
                 bot.sendMessage(chatId, `Неверно. Осталось попыток: ${attempts}.`);
