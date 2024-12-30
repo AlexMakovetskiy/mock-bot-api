@@ -22,6 +22,36 @@ const App = () => {
                         setButtonColors(newColors);
                     }, 15000);
                 }
+                if(response.status >= 300 && response.status < 400) {
+                    const newColors = [...buttonColors];
+                    newColors[index] = 'orange';
+                    setButtonColors(newColors);
+
+                    setTimeout(() => {
+                        newColors[index] = '';
+                        setButtonColors(newColors);
+                    }, 15000);
+                }
+                if(response.status >= 400 && response.status < 500) {
+                    const newColors = [...buttonColors];
+                    newColors[index] = 'red';
+                    setButtonColors(newColors);
+
+                    setTimeout(() => {
+                        newColors[index] = '';
+                        setButtonColors(newColors);
+                    }, 15000);
+                }
+                if(response.status >= 500 && response.status < 600) {
+                    const newColors = [...buttonColors];
+                    newColors[index] = 'black';
+                    setButtonColors(newColors);
+
+                    setTimeout(() => {
+                        newColors[index] = '';
+                        setButtonColors(newColors);
+                    }, 15000);
+                }
             })
             .catch((error) => {
                 console.error(error);
@@ -36,7 +66,7 @@ const App = () => {
                 style={{ background: `linear-gradient(to right, ${buttonColors[0] || 'red'}, ${buttonColors[0] || 'blue'})` }} 
                 onClick={() => handleButtonClick(0, "interactive-game-bot-23845")}
             >Interactive game</button>
-            <button style={{ background: `linear-gradient(to right, ${buttonColors[1] || 'red'}, ${buttonColors[1] || 'blue'})` }} onClick={() => handleButtonClick(1, "mock-bot-api")}>Finance assistant</button>
+            <button style={{ background: `linear-gradient(to right, ${buttonColors[1] || 'red'}, ${buttonColors[1] || 'blue'})` }} onClick={() => handleButtonClick(1, "finance-assistant-bot")}>Finance assistant</button> 
             <button style={{ background: `linear-gradient(to right, ${buttonColors[2] || 'red'}, ${buttonColors[2] || 'blue'})` }} onClick={() => handleButtonClick(2, "healthy-food-assistant")}>Healthy food assistant</button>
         </div>
         </div>
