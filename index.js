@@ -26,17 +26,17 @@ bot.onText(botIncomeMassages.continue, (msg) => {
 });
 
 bot.onText(botIncomeMassages.breakfast, (msg) => {
-    currentCategory = Object.keys(botIncomeMassages)[1];
-    sendRandomTip(msg.chat.id);
-});
-
-bot.onText(botIncomeMassages.lunch, (msg) => {
     currentCategory = Object.keys(botIncomeMassages)[2];
     sendRandomTip(msg.chat.id);
 });
 
-bot.onText(botIncomeMassages.dinner, (msg) => {
+bot.onText(botIncomeMassages.lunch, (msg) => {
     currentCategory = Object.keys(botIncomeMassages)[3];
+    sendRandomTip(msg.chat.id);
+});
+
+bot.onText(botIncomeMassages.dinner, (msg) => {
+    currentCategory = Object.keys(botIncomeMassages)[4];
     sendRandomTip(msg.chat.id);
 });
 
